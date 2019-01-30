@@ -11,5 +11,6 @@ namespace Northwind.WebUI.Controllers
         private IMediator _mediator;
 
         protected IMediator Mediator => _mediator ?? (_mediator = HttpContext.RequestServices.GetService<IMediator>());
+
     }
 }

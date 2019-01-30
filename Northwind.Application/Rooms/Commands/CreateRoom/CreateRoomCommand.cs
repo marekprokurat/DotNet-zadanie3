@@ -10,7 +10,6 @@ namespace Northwind.Application.Rooms.Commands
         public int RoomNumber { get; set; }
         public int RoomCapacity { get; set; }
         public string Notes  { get; set; }
-
-    public List<Date> ReservationDates { get; set; }
+        public ICollection<Date> ReservationDates { get; set; }
     }
 }

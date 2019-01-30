@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿
 using FluentValidation;
 
 namespace Northwind.Application.Rooms.Commands.Validators
@@ -9,7 +7,7 @@ namespace Northwind.Application.Rooms.Commands.Validators
     {
         public DeleteRoomCommandValidator()
         {
-            RuleFor(e => e.RoomId).NotNull();
+           // RuleFor(e => e.RoomId).NotNull();
         }
     }
 }

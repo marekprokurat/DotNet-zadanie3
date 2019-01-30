@@ -1,5 +1,4 @@
 ﻿using AutoMapper;
-using Northwind.Application.Rooms.Queries;
 using System.Reflection;
 
 namespace Northwind.Application.Infrastructure.AutoMapper

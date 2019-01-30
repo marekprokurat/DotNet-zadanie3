@@ -1,17 +1,9 @@
 ﻿using System.Net;
-using MediatR;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using Northwind.Application.Rooms;
 using Northwind.Application.Rooms.Commands;
 using Northwind.Application.Rooms.Models;
 using Northwind.Application.Rooms.Queries;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.DependencyInjection;
-using System.Linq;
-using System.Collections.Generic;
-using Northwind.Domain.Entities;
-
 
 
 namespace Northwind.WebUI.Controllers
@@ -19,24 +11,12 @@ namespace Northwind.WebUI.Controllers
    // public class RoomPreviewModel : DbContext
     [Route("api/[controller]/[action]")]
     [ApiController]
+
     public class RoomsController : BaseController
     {
-        private readonly Room _context;
-        public RoomsController(Room context)
-        {
-            _context = context;
 
-            if (_context.RoomId == 0)
-            {
-                // RoomPreviewModel.Add(new RoomPreviewModel );
-                // _context.Rooms = new CreateRoomCommand  { RoomId = 1 };
-                _context.RoomId = 1; //Int.Parse(new Room );
-            }
-        }
-
-
-    // GET: api/products
-    [HttpGet]
+        // GET: api/
+        [HttpGet]
         public async Task<ActionResult<RoomListModel>> GetAll()
         {
             return Ok(await Mediator.Send(new GetRoomsQuery()));
@@ -60,12 +40,6 @@ namespace Northwind.WebUI.Controllers
         [HttpPost]
         public async Task<ActionResult<RoomPreviewModel>> Create([FromBody] CreateRoomCommand command)
         {
-
-         //   _context.Rooms.Add(room);
-        //    await _context.SaveChangesAsync();
-
-          //  return CreatedAtAction("GetRoom", new { id = room.Id }, room);
-
 
 
             var productId = await Mediator.Send(command);

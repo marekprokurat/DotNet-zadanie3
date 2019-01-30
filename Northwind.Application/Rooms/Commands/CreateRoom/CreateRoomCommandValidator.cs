@@ -7,9 +7,9 @@ namespace Northwind.Application.Rooms.Validators
     {
         public CreateRoomCommandValidator()
         {
-            RuleFor(c => c.RoomId).NotNull();
-            RuleFor(c => c.RoomNumber).NotNull().GreaterThanOrEqualTo(0);
-            RuleFor(c => c.RoomCapacity).NotNull().GreaterThanOrEqualTo(0).LessThanOrEqualTo(100);
+          //  RuleFor(c => c.RoomId).NotNull();
+          //  RuleFor(c => c.RoomNumber).NotNull().GreaterThanOrEqualTo(0);
+          //  RuleFor(c => c.RoomCapacity).NotNull().GreaterThanOrEqualTo(0).LessThanOrEqualTo(100);
         }
     }
 }

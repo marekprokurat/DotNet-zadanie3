@@ -20,9 +20,9 @@ RUN curl -sL https://deb.nodesource.com/setup_6.x |  bash -
 RUN apt-get install -y nodejs
 
 # Install npm packages first, this is slow so we want to minimise the number of un-cached runs
-WORKDIR /src/Northwind.WebUI/ClientApp/
-COPY Northwind.WebUI/ClientApp/package.json .
-COPY Northwind.WebUI/ClientApp/package-lock.json .
+#WORKDIR /src/Northwind.WebUI/ClientApp/
+#COPY Northwind.WebUI/ClientApp/package.json .
+#COPY Northwind.WebUI/ClientApp/package-lock.json .
 
 RUN npm install
 
@@ -40,8 +40,8 @@ RUN dotnet restore /src/Northwind.WebUI/Northwind.WebUI.csproj
 # Copy source files and build
 COPY . /src
 
-RUN dotnet build /src/Northwind.WebUI/Northwind.WebUI.csproj --no-restore -c Release
-RUN dotnet publish /src/Northwind.WebUI/Northwind.WebUI.csproj --no-restore -c Release -o /app
+RUN dotnet build /src/Northwind.WebUI/Northwind.WebUI.csproj --no-restore -c Debug
+#RUN dotnet publish /src/Northwind.WebUI/Northwind.WebUI.csproj --no-restore -c Release -o /app
 
 # Copy compiled app to runtime container
 FROM base AS final

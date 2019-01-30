@@ -2,7 +2,6 @@
 using System.Threading.Tasks;
 using MediatR;
 using Northwind.Application.Interfaces;
-using Northwind.Application.Notifications.Models;
 using Northwind.Domain.Entities;
 using Northwind.Persistence;
 

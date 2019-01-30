@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations.Schema;
-
+﻿using System.Collections.Generic;
 namespace Northwind.Domain.Entities
 {
     public class Room
@@ -15,7 +12,16 @@ namespace Northwind.Domain.Entities
         public int RoomNumber { get; set; }
         public int RoomCapacity { get; set; }
         public string Notes { get; set; }
-      //  public string Notes { get; set; }
         public ICollection<Date> ReservationDates { get; set; }
+
+
     }
 }
+
+        
+        
+       
+
+
+
+   

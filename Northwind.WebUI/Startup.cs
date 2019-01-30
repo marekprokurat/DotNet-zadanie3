@@ -8,18 +8,15 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Northwind.Application.Rooms.Models;
 using Northwind.Application.Infrastructure;
 using Northwind.Application.Infrastructure.AutoMapper;
 using Northwind.Application.Interfaces;
-using Northwind.Application.Rooms.Queries;
 using Northwind.Application.Rooms.Commands;
 using Northwind.Application.Rooms.Queries.Handlers;
 using Northwind.Common;
 using Northwind.Infrastructure;
 using Northwind.Persistence;
 using Northwind.WebUI.Filters;
-
 using NSwag.AspNetCore;
 using System.Reflection;
 
@@ -107,8 +104,7 @@ namespace Northwind.WebUI
 
             app.UseSpa(spa =>
             {
-                // To learn more about options for serving an Angular SPA from ASP.NET Core,
-                // see https://go.microsoft.com/fwlink/?linkid=864501
+     
 
                 spa.Options.SourcePath = "ClientApp";
 

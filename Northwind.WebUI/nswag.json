@@ -101,7 +101,8 @@
       "enumNameGeneratorType": null,
       "serviceHost": null,
       "serviceSchemes": null,
-      "output": "ClientApp/src/app/northwind-traders-api.ts"
+      "output": "northwind-traders-api.ts"
+      // "output": "ClientApp/src/app/northwind-traders-api.ts"
     }
   }
 }

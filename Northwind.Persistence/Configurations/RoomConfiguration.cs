@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using Northwind.Domain.Entities;
@@ -11,9 +9,11 @@ namespace Northwind.Persistence.Configurations
     {
         public void Configure(EntityTypeBuilder<Room> builder)
         {
-            builder.Property(e => e.RoomId).HasColumnName("RoomId").ValueGeneratedNever(); //ValueGeneratedOnAdd();
+        
+            builder.Property(e => e.RoomId).ValueGeneratedOnAdd();
             builder.Property(e => e.RoomNumber).IsRequired();
             builder.Property(e => e.RoomCapacity).IsRequired();
+            builder.Property(e => e.Notes);
         }
     }
 }

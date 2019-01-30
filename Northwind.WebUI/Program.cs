@@ -21,7 +21,6 @@ namespace Northwind.WebUI
                 {
                     var context = scope.ServiceProvider.GetService<NorthwindDbContext>();
                     context.Database.Migrate();
-
                     NorthwindInitializer.Initialize(context);
                 }
                 catch (Exception ex)
